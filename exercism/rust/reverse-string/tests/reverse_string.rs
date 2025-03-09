@@ -57,7 +57,6 @@ fn wide_characters() {
 }
 
 #[test]
-#[ignore]
 #[cfg(feature = "grapheme")]
 fn grapheme_cluster_with_pre_combined_form() {
     let input = "Würstchenstand";

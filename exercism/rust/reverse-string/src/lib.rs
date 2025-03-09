@@ -1,9 +1,9 @@
-pub fn reverse(input: &str) -> String {
-    let mut reversed_str = String::with_capacity(input.len() * 2);
+use unicode_reverse::reverse_grapheme_clusters_in_place;
 
-    for c in input.chars().rev() {
-        reversed_str.push(c);
-    }
+pub fn reverse(input: &str) -> String {
+    let mut reversed_str = String::from(input);
+
+    reverse_grapheme_clusters_in_place(&mut reversed_str);
 
     reversed_str
 }
