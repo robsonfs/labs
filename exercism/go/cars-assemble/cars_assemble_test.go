@@ -123,75 +123,75 @@ func TestCalculateWorkingCarsPerMinute(t *testing.T) {
 	}
 }
 
-// func TestCalculateCost(t *testing.T) {
-// 	tests := []struct {
-// 		name      string
-// 		carsCount int
-// 		want      uint
-// 	}{
-// 		{
-// 			name:      "calculate cost to produce 0 cars",
-// 			carsCount: 0,
-// 			want:      0,
-// 		},
-// 		{
-// 			name:      "calculate the cost of materials to produce 1 car",
-// 			carsCount: 1,
-// 			want:      10000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 2 cars",
-// 			carsCount: 2,
-// 			want:      20000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 9 cars",
-// 			carsCount: 9,
-// 			want:      90000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 10 cars",
-// 			carsCount: 10,
-// 			want:      95000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 100 cars",
-// 			carsCount: 100,
-// 			want:      950000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 21 cars",
-// 			carsCount: 21,
-// 			want:      200000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 37 cars",
-// 			carsCount: 37,
-// 			want:      355000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 56 cars",
-// 			carsCount: 56,
-// 			want:      535000,
-// 		},
-// 		{
-// 			name:      "calculate cost to produce 148 cars",
-// 			carsCount: 148,
-// 			want:      1410000,
-// 		},
-// 	}
+func TestCalculateCost(t *testing.T) {
+	tests := []struct {
+		name      string
+		carsCount int
+		want      uint
+	}{
+		{
+			name:      "calculate cost to produce 0 cars",
+			carsCount: 0,
+			want:      0,
+		},
+		{
+			name:      "calculate the cost of materials to produce 1 car",
+			carsCount: 1,
+			want:      10000,
+		},
+		{
+			name:      "calculate cost to produce 2 cars",
+			carsCount: 2,
+			want:      20000,
+		},
+		{
+			name:      "calculate cost to produce 9 cars",
+			carsCount: 9,
+			want:      90000,
+		},
+		{
+			name:      "calculate cost to produce 10 cars",
+			carsCount: 10,
+			want:      95000,
+		},
+		{
+			name:      "calculate cost to produce 100 cars",
+			carsCount: 100,
+			want:      950000,
+		},
+		{
+			name:      "calculate cost to produce 21 cars",
+			carsCount: 21,
+			want:      200000,
+		},
+		{
+			name:      "calculate cost to produce 37 cars",
+			carsCount: 37,
+			want:      355000,
+		},
+		{
+			name:      "calculate cost to produce 56 cars",
+			carsCount: 56,
+			want:      535000,
+		},
+		{
+			name:      "calculate cost to produce 148 cars",
+			carsCount: 148,
+			want:      1410000,
+		},
+	}
 
-// 	for _, tt := range tests {
-// 		t.Run(tt.name, func(t *testing.T) {
-// 			got := CalculateCost(tt.carsCount)
-// 			if got != tt.want {
-// 				t.Errorf(
-// 					"CalculateCost(%d) = %d, want %d",
-// 					tt.carsCount,
-// 					got,
-// 					tt.want,
-// 				)
-// 			}
-// 		})
-// 	}
-// }
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := CalculateCost(tt.carsCount)
+			if got != tt.want {
+				t.Errorf(
+					"CalculateCost(%d) = %d, want %d",
+					tt.carsCount,
+					got,
+					tt.want,
+				)
+			}
+		})
+	}
+}
