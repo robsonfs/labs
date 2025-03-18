@@ -1,2 +1,2 @@
 # Labs
-this essentially a place to test things out.
+This essentially a place to test things out.
