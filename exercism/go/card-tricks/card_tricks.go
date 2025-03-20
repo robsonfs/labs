@@ -1,5 +1,7 @@
 package cards
 
+import "slices"
+
 // FavoriteCards returns a slice with the cards 2, 6 and 9 in that order.
 func FavoriteCards() []int {
 	return []int{2, 6, 9}
@@ -33,5 +35,8 @@ func PrependItems(slice []int, values ...int) []int {
 
 // RemoveItem removes an item from a slice by modifying the existing slice.
 func RemoveItem(slice []int, index int) []int {
-	panic("Please implement the RemoveItem function")
+	if index < 0 || index >= len(slice) {
+		return slice
+	}
+	return slices.Delete(slice, index, index+1)
 }
