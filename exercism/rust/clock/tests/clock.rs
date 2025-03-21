@@ -79,17 +79,15 @@ fn negative_minutes() {
     assert_eq!(Clock::new(1, -40).to_string(), "00:20");
 }
 
-// #[test]
-// #[ignore]
-// fn negative_minutes_roll_over() {
-//     assert_eq!(Clock::new(1, -160).to_string(), "22:20");
-// }
+#[test]
+fn negative_minutes_roll_over() {
+    assert_eq!(Clock::new(1, -160).to_string(), "22:20");
+}
 
-// #[test]
-// #[ignore]
-// fn negative_minutes_roll_over_continuously() {
-//     assert_eq!(Clock::new(1, -4820).to_string(), "16:40");
-// }
+#[test]
+fn negative_minutes_roll_over_continuously() {
+    assert_eq!(Clock::new(1, -4820).to_string(), "16:40");
+}
 
 // #[test]
 // #[ignore]

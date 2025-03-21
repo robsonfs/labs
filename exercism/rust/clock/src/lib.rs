@@ -35,7 +35,8 @@ impl Clock {
         let minutes = if minutes == minutes.euclidean_mod(60) {
             minutes
         } else if minutes < 0 {
-            hours -= 1;
+            hours -= ((minutes / 60) - 1).abs();
+            hours.euclidean_mod(24);
             minutes.euclidean_mod(60)
         } else {
             hours += minutes / 60;
