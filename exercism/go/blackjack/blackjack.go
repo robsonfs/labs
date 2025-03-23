@@ -36,8 +36,33 @@ func ParseCard(card string) int {
 	}
 }
 
+func isInRange(start, end, value int) bool {
+	return start <= value && value <= end
+}
+
 // FirstTurn returns the decision for the first turn, given two cards of the
 // player and one card of the dealer.
 func FirstTurn(card1, card2, dealerCard string) string {
-	panic("Please implement the FirstTurn function")
+	cardsSum := ParseCard(card1) + ParseCard(card2)
+
+	switch {
+	case card1 == "ace" && card2 == "ace":
+		return "P"
+	case cardsSum == 21:
+		if ParseCard(dealerCard) < 10 {
+			return "W"
+		} else {
+			return "S"
+		}
+	case isInRange(17, 20, cardsSum):
+		return "S"
+	case isInRange(12, 16, cardsSum):
+		if ParseCard(dealerCard) >= 7 {
+			return "H"
+		} else {
+			return "S"
+		}
+	default:
+		return "H"
+	}
 }
