@@ -18,10 +18,15 @@ func NewCar(speed, batteryDrain int) Car {
 }
 
 // TODO: define the 'Track' type struct
+type Track struct {
+	distance int
+}
 
 // NewTrack creates a new track
 func NewTrack(distance int) Track {
-	panic("Please implement the NewTrack function")
+	return Track{
+		distance: distance,
+	}
 }
 
 // Drive drives the car one time. If there is not enough battery to drive one more time,
