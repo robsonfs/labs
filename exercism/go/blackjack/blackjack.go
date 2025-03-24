@@ -40,6 +40,10 @@ func isInRange(start, end, value int) bool {
 	return start <= value && value <= end
 }
 
+func isBlackJack(cardsSum int) bool {
+	return cardsSum == 21
+}
+
 // FirstTurn returns the decision for the first turn, given two cards of the
 // player and one card of the dealer.
 func FirstTurn(card1, card2, dealerCard string) string {
@@ -48,7 +52,7 @@ func FirstTurn(card1, card2, dealerCard string) string {
 	switch {
 	case card1 == "ace" && card2 == "ace":
 		return "P"
-	case cardsSum == 21:
+	case isBlackJack(cardsSum):
 		if ParseCard(dealerCard) < 10 {
 			return "W"
 		} else {
