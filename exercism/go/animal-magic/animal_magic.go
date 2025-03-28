@@ -10,7 +10,7 @@ func floatRandInRange(min, max float64) float64 {
 	return min + rand.Float64()*(max-min)
 }
 
-func shuffleSlice(arr []string) {
+func shuffleSlice[T any](arr []T) {
 	rand.Shuffle(len(arr), func(i, j int) {
 		arr[i], arr[j] = arr[j], arr[i]
 	})
