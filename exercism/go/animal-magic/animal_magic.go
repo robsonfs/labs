@@ -6,6 +6,10 @@ func intRandInRange(min, max int) int {
 	return rand.Intn(max-min+1) + min
 }
 
+func floatRandInRange(min, max float64) float64 {
+	return min + rand.Float64()*(max-min)
+}
+
 // RollADie returns a random int d with 1 <= d <= 20.
 func RollADie() int {
 	return intRandInRange(1, 20)
@@ -13,7 +17,7 @@ func RollADie() int {
 
 // GenerateWandEnergy returns a random float64 f with 0.0 <= f < 12.0.
 func GenerateWandEnergy() float64 {
-	return rand.Float64() * 12.0
+	return floatRandInRange(0.0, 12.0)
 }
 
 // ShuffleAnimals returns a slice with all eight animal strings in random order.
