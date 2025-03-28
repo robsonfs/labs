@@ -2,9 +2,13 @@ package chance
 
 import "math/rand"
 
+func intRandInRange(min, max int) int {
+	return rand.Intn(max-min+1) + 1
+}
+
 // RollADie returns a random int d with 1 <= d <= 20.
 func RollADie() int {
-	return rand.Intn(20) + 1
+	return intRandInRange(1, 20)
 }
 
 // GenerateWandEnergy returns a random float64 f with 0.0 <= f < 12.0.
