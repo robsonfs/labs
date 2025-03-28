@@ -2,14 +2,20 @@ package chance
 
 import "math/rand"
 
+// intRandInRange returns a random integer in the range [min, max] (inclusive).
+// It panics if min > max.
 func intRandInRange(min, max int) int {
 	return rand.Intn(max-min+1) + min
 }
 
+// floatRandInRange returns a random float64 in the range [min, max).
+// It panics if min > max.
 func floatRandInRange(min, max float64) float64 {
 	return min + rand.Float64()*(max-min)
 }
 
+// shuffleSlice randomly shuffles the elements of a slice in-place.
+// It works for slices of any type.
 func shuffleSlice[T any](arr []T) {
 	rand.Shuffle(len(arr), func(i, j int) {
 		arr[i], arr[j] = arr[j], arr[i]
