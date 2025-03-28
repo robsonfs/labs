@@ -3,7 +3,7 @@ package chance
 import "math/rand"
 
 func intRandInRange(min, max int) int {
-	return rand.Intn(max-min+1) + 1
+	return rand.Intn(max-min+1) + min
 }
 
 // RollADie returns a random int d with 1 <= d <= 20.
