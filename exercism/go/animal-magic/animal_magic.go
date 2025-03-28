@@ -10,6 +10,12 @@ func floatRandInRange(min, max float64) float64 {
 	return min + rand.Float64()*(max-min)
 }
 
+func shuffleSlice(arr []string) {
+	rand.Shuffle(len(arr), func(i, j int) {
+		arr[i], arr[j] = arr[j], arr[i]
+	})
+}
+
 // RollADie returns a random int d with 1 <= d <= 20.
 func RollADie() int {
 	return intRandInRange(1, 20)
@@ -23,9 +29,7 @@ func GenerateWandEnergy() float64 {
 // ShuffleAnimals returns a slice with all eight animal strings in random order.
 func ShuffleAnimals() []string {
 	animals := []string{"ant", "beaver", "cat", "dog", "elephant", "fox", "giraffe", "hedgehog"}
-	rand.Shuffle(8, func(i, j int) {
-		animals[i], animals[j] = animals[j], animals[i]
-	})
+	shuffleSlice(animals)
 
 	return animals
 }
