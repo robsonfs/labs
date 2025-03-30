@@ -30,8 +30,25 @@ func Quantities(layers []string) (int, float64) {
 }
 
 // TODO: define the 'AddSecretIngredient()' function
+func AddSecretIngredient(friendsList, myList []string) {
+	myList[len(myList)-1] = friendsList[len(friendsList)-1]
+}
 
 // TODO: define the 'ScaleRecipe()' function
+func ScaleRecipe(quantities []float64, portions_number int) (new_quantities []float64) {
+	if portions_number < 1 {
+		panic("Nothing to cook!")
+	}
+
+	new_quantities = []float64{}
+
+	for k := 0; k < len(quantities); k++ {
+		scaled_quantity := quantities[k] * (float64(portions_number) / 2.0)
+		new_quantities = append(new_quantities, scaled_quantity)
+	}
+
+	return
+}
 
 // Your first steps could be to read through the tasks, and create
 // these functions with their correct parameter lists and return types.
