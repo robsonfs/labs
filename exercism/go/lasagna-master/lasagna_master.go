@@ -12,7 +12,7 @@ func countElements[T comparable](arr []T, item T) int {
 	return counter
 }
 
-// TODO: define the 'PreparationTime()' function
+// PreparationTime caclculates the total estimated time to prepare the meal.
 func PreparationTime(layers []string, avg_prep_timer int) int {
 	if avg_prep_timer > 0 {
 		return len(layers) * avg_prep_timer
@@ -21,7 +21,7 @@ func PreparationTime(layers []string, avg_prep_timer int) int {
 	}
 }
 
-// TODO: define the 'Quantities()' function
+// Quantities computes the amount of noodles and sauce needed
 func Quantities(layers []string) (int, float64) {
 	amountNoodles := countElements(layers, "noodles")
 	amountSauce := countElements(layers, "sauce")
@@ -29,12 +29,12 @@ func Quantities(layers []string) (int, float64) {
 	return amountNoodles * 50, float64(amountSauce) * 0.2
 }
 
-// TODO: define the 'AddSecretIngredient()' function
+// AddSecretIngredient adds the secretsingredient from my friends list
 func AddSecretIngredient(friendsList, myList []string) {
 	myList[len(myList)-1] = friendsList[len(friendsList)-1]
 }
 
-// TODO: define the 'ScaleRecipe()' function
+// ScaleRecipe scales quiantities up or down based on portions number
 func ScaleRecipe(quantities []float64, portions_number int) (new_quantities []float64) {
 	if portions_number < 1 {
 		panic("Nothing to cook!")
@@ -49,12 +49,3 @@ func ScaleRecipe(quantities []float64, portions_number int) (new_quantities []fl
 
 	return
 }
-
-// Your first steps could be to read through the tasks, and create
-// these functions with their correct parameter lists and return types.
-// The function body only needs to contain `panic("")`.
-//
-// This will make the tests compile, but they will fail.
-// You can then implement the function logic one by one and see
-// an increasing number of tests passing as you implement more
-// functionality.
