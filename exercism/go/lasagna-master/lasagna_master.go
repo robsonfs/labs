@@ -3,9 +3,9 @@ package lasagna
 func countElements[T comparable](arr []T, item T) int {
 	counter := 0
 
-	for k := 0; k < len(arr); k++ {
-		if arr[k] == item {
-			counter += 1
+	for _, value := range arr {
+		if value == item {
+			counter++
 		}
 	}
 
@@ -42,8 +42,8 @@ func ScaleRecipe(quantities []float64, portions_number int) (new_quantities []fl
 
 	new_quantities = []float64{}
 
-	for k := 0; k < len(quantities); k++ {
-		scaled_quantity := quantities[k] * (float64(portions_number) / 2.0)
+	for _, value := range quantities {
+		scaled_quantity := value * (float64(portions_number) / 2.0)
 		new_quantities = append(new_quantities, scaled_quantity)
 	}
 
