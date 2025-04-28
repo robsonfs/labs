@@ -1,3 +1,4 @@
 */target
 *.pyc
 local_archive
+*/local_files/*
