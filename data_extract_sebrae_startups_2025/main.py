@@ -2,7 +2,7 @@ import pdfplumber
 import re
 import json
 
-FILE_PATH = "local_file/PSS-2025-Top-1.000_06_06-1.pdf"
+FILE_PATH = "local_files/PSS-2025-Top-1.000_06_06-1.pdf"
 
 def data_extract(file_path=None):
         data = []
@@ -34,8 +34,8 @@ def data_extract(file_path=None):
         return data                        
     
 
-def generate_json(input_data: str | dict, output_path=None):
-    if type(input_data) not in (str, dict):
+def generate_json(input_data: str | list, output_path=None):
+    if type(input_data) not in (str, list):
         raise TypeError(
             f"input_data should be either a str or a dict. Found: {type(input_data)}"
         )
