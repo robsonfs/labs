@@ -4,7 +4,15 @@ import json
 
 FILE_PATH = "local_files/PSS-2025-Top-1.000_06_06-1.pdf"
 
-def data_extract(file_path=None):
+def data_extract(file_path=None, try_cache=False):
+        if try_cache:
+            try:
+                with open("local_files/startups.json", "r") as cached:
+                    data = json.load(cached)
+                return data
+            except Exception as err:
+                print(err)
+                print("Attempt to access cached data failed. performing a full parser...")
         data = []
         cnpj_regex = re.compile(r"\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}")
 
